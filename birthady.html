@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday My Love!</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+       background: linear-gradient(to bottom, #fcb1c3, #ffe6ec);
+      overflow-x: hidden;
+    }
+    .main-section, .memory-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+    .card-box {
+      
+      height: 600px;
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #d63384;
+      font-size: 100px;
+      font-family: 'Great Vibes', cursive;
+    }
+    .pink-btn {
+        margin-top: 30px;
+      background: linear-gradient(90deg, #ff5e94, #ff758c);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 30px;
+      margin-top: 20px; 
+      font-size: 20px;
+      transition: transform 0.2s;
+    }
+    .pink-btn:hover {
+      transform: scale(1.05);
+    }
+    .hidden {
+      display: none;
+    }
+    .scroll-gallery {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 10px 0;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+    }
+    .scroll-gallery::-webkit-scrollbar {
+      display: none;
+    }
+    .scroll-gallery img {
+      flex: 0 0 auto;
+      width: 140px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      scroll-snap-align: center;
+      transition: transform 0.3s, opacity 0.3s;
+      opacity: 0.6;
+    }
+    .scroll-gallery img.active {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    .card-box p{
+       margin-top: 30px;
+      color: #d63384;
+      font-size: 30px;
+    }
+    .image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+
+}
+
+.image-gallery img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+ transition: transform 0.3s ease;
+  animation: float 4s ease-in-out infinite;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(216, 5, 188, 0.822);
+}
+
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+  /*cake*/
+      .cake {
+        margin-top: 50px;
+        margin-left: 650px;
+      position: relative;
+      width: 200px;
+      height: 180px;
+    
+      
+    }
+
+    .layer {
+  
+      position: absolute;
+      width: 100%;
+      background: #ff82b2;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .bottom-layer {
+          
+      height: 80px;
+      bottom: 0;
+      animation: pop 0.5s ease-out forwards;
+    }
+
+    .top-layer {
+         
+      height: 60px;
+      bottom: 80px;
+      width: 150px;
+      left: 25px;
+      animation: pop 0.5s ease-out forwards;
+      animation-delay: 0.5s;
+    }
+
+    .frosting {
+      position: absolute;
+      width: 100%;
+      height: 30px;
+      top: 0;
+      background: #ffd2eb;
+      border-radius: 20px;
+      box-shadow: inset 0 -4px 0 #ffc0dd;
+    }
+
+    .drip {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ffd2eb;
+      border-radius: 50%;
+      bottom: -10px;
+    }
+
+    .drip:nth-child(1) { left: 20px; }
+    .drip:nth-child(2) { left: 60px; }
+    .drip:nth-child(3) { left: 110px; }
+
+    .candles {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%) translateY(-30px);
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      z-index: 5;
+    }
+
+    .candle {
+      margin-top: 30px;
+      width: 8px;
+      height: 40px;
+      background: white;
+      border-radius: 2px;
+      position: relative;
+    }
+
+    .flame {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 10px;
+      background: radial-gradient(circle, #ffff99 0%, #ffaa00 60%, transparent 80%);
+      border-radius: 50%;
+      box-shadow: 0 0 10px 5px #fff17688;
+      animation: flicker 1s infinite alternate;
+    }
+
+    @keyframes pop {
+      0% { transform: translateY(50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes flicker {
+      from { transform: translateX(-50%) scale(1); opacity: 1; }
+      to { transform: translateX(-50%) scale(1.2); opacity: 0.8; }
+    }
+
+    .sprinkles {
+      position: absolute;
+      top: 5px;
+      left: 10px;
+      width: 100%;
+      height: 30px;
+    }
+
+    .sprinkle {
+      width: 6px;
+      height: 2px;
+      border-radius: 1px;
+      position: absolute;
+    }
+
+    .sprinkle:nth-child(1) { background: #ff6f61; top: 5px; left: 10px; transform: rotate(30deg); }
+    .sprinkle:nth-child(2) { background: #82e0aa; top: 12px; left: 40px; transform: rotate(-20deg); }
+    .sprinkle:nth-child(3) { background: #f4d03f; top: 8px; left: 90px; transform: rotate(45deg); }
+    .sprinkle:nth-child(4) { background: #85c1e9; top: 15px; left: 60px; transform: rotate(10deg); }
+    .sprinkle:nth-child(5) { background: #af7ac5; top: 4px; left: 120px; transform: rotate(-15deg); }
+
+    .h4{
+      text-align: center;
+      margin-left: 100px;
+       font-size: 25px;
+      background: linear-gradient(45deg,#ff61b5 ,#e90b7a,#6c1875,#a52400,#a49009,#0b9fe9);
+     
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    }
+    .bond{
+      font-size: 25px;
+      background: linear-gradient(45deg, #ff61b5,#e90b7a,#6c1875,#ba55d3,#0b9fe9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    }
+  
+  .mirror{
+    margin-bottom: 50px;
+     font-size: 48px;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  background: linear-gradient(90deg, #ac0e5b, #f05cda, #fcb1c3);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 2s linear infinite;
+}
+
+@keyframes mirror {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+    
+
+
+
+  </style>
+</head>
+<body>
+  <div class="cake">
+    <div class="layer bottom-layer">
+      <div class="frosting">
+        <div class="drip"></div>
+        <div class="drip"></div>
+        <div class="drip"></div>
+      </div>
+    </div>
+    <div class="layer top-layer">
+      <div class="frosting">
+        <div class="drip"></div>
+        <div class="drip"></div>
+        <div class="drip"></div>
+      </div>
+      <div class="sprinkles">
+        <div class="sprinkle"></div>
+        <div class="sprinkle"></div>
+        <div class="sprinkle"></div>
+        <div class="sprinkle"></div>
+        <div class="sprinkle"></div>
+      </div>
+    </div>
+    <div class="candles">
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+    </div>
+  </div><br>
+  <h4 class="h4">“Every layer of this cake holds a piece of my heart, baked just for you.”</h4>
+  
+  <!-- First Section -->
+  <section class="main-section" id="welcome-section">
+    <div class="card-box" data-aos="fade-up">
+      <h1 data-aos="fade-down"
+          data-aos-easing="linear"
+          data-aos-duration="1500">Happy Birthday my bestiee!<br>💕😘❤️</h1>
+      <p data-aos="fade-down"
+          data-aos-easing="linear"
+          data-aos-duration="1500">To the most amazing woman in my life🫂</p>
+      <p data-aos="fade-down"
+          data-aos-easing="linear"
+          data-aos-duration="1500"><em>"Every moment with you is a gift, and today we celebrate the greatest gift of <br>all – YOU!🌹"</em></p>
+       
+      <button class="pink-btn" onclick="showMemories()" data-aos="zoom-in">Begin Your Surprise! ❤</button>
+    </div>
+  </section>
+
+  <section class="memory-section hidden" id="memory-section">
+  <h2 class="mirror" style="" data-aos="fade-up">Mirror of Memories</h2>
+  <div class="image-gallery" data-aos="fade-up">
+    <img src="C:\Users\siddh\OneDrive\Desktop\birthady\WhatsApp Image 2025-07-11 at 19.15.24_21117cdc.jpg" alt="Memory 1">
+    <img src="C:\Users\siddh\OneDrive\Desktop\birthady\WhatsApp Image 2025-07-11 at 19.15.23_ade4aae0.jpg" alt="Memory 2">
+    <img src="C:\Users\siddh\OneDrive\Desktop\birthady\WhatsApp Image 2025-07-11 at 19.15.23_fddac6e2.jpg" alt="Memory 3">
+    <img src="C:\Users\siddh\OneDrive\Desktop\birthady\WhatsApp Image 2025-07-11 at 19.15.24_fce6ceee.jpg" alt="Memory 4">
+    <img src="C:\Users\siddh\OneDrive\Desktop\birthady\WhatsApp Image 2025-07-11 at 19.15.25_d38bb2eb.jpg" alt="Memory 5">
+    <img src="C:\Users\siddh\OneDrive\Desktop\birthady\WhatsApp Image 2025-07-11 at 19.15.26_21a0c5e8.jpg" alt="Memory 6">
+  </div><br><br>
+  <p class="bond">Our bond is timeless, our memories endless…...</p>
+  <a href="file:///C:/Users/siddh/OneDrive/Desktop/birthady/2ndpage.html"><button class="pink-btn">🎀 Unwrap the Memory</button></a>
+</section>
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    function showMemories() {
+      document.getElementById('welcome-section').classList.add('hidden');
+      document.getElementById('memory-section').classList.remove('hidden');
+    }
+  </script>
+<!-- AOS JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+</body>
+</html>

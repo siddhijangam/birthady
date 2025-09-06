@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Forever Bestie 💖</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(120deg, #ffe6f0, #ffc1d3);
+       background: url("./WhatsApp\ Image\ 2025-07-11\ at\ 21.05.53_3bb86916.jpg") no-repeat center top;
+  background-size: cover;
+ 
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .card-container {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .greeting-card {
+      background: #fff;
+      padding: 40px;
+      border-radius: 30px;
+      box-shadow: 0 15px 40px rgba(255, 64, 129, 0.3);
+      max-width: 700px;
+      text-align: center;
+      animation: fadeZoom 1.2s ease-out;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 58px;
+      background: linear-gradient(90deg, #ff66b2, #f06292, #e040fb);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: shine 4s linear infinite;
+    }
+
+    .typewriter-text {
+      font-size: 20px;
+      color: #6a1b4d;
+      margin-top: 20px;
+      white-space: pre-wrap;
+      min-height: 120px;
+      font-weight: 400;
+    }
+
+    .surprise-btn {
+      margin-top: 30px;
+      background: linear-gradient(45deg, #ff69b4, #f06292);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgba(255, 20, 147, 0.3);
+      transition: transform 0.2s ease;
+    }
+
+    .surprise-btn:hover {
+      transform: scale(1.05);
+    }
+
+    #secretMessage {
+      margin-top: 30px;
+      font-size: 20px;
+      color: #d63384;
+      font-weight: bold;
+      display: none;
+    }
+
+    @keyframes shine {
+      0% { background-position: 200% center; }
+      100% { background-position: 0% center; }
+    }
+
+    @keyframes fadeZoom {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="card-container">
+  <div class="greeting-card">
+    <h1>To My Forever Bestie 🎀</h1>
+    <div id="typewriter" class="typewriter-text"></div>
+
+    <button class="surprise-btn" onclick="revealMessage()">Click for a Hug 🤗</button>
+    <p id="secretMessage"> 💌*Tightest Hug Sent Virtually!*❤️</p>
+  </div>
+</div>
+<div  style="text-align:center; margin-top: 30px;">
+  <h3 style="color:#2d0729; font-weight: 700; font-size: 70px;">🎬 Watch Our Journey!</h3>
+  <video width="1700px"   controls autoplay muted loop style="border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
+    <source src="./WhatsApp Video 2025-07-11 at 21.22.57_fa5e24a3.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+<script>
+  const text = `My Jaanudi...
+You know what? I don’t even need to say how much you mean to me – because you already know.
+It’s been 7 years of our friendship, and in all these years, no one has felt as close to my heart as you have.
+
+You're truly a magic in my life.
+Every single day, every little moment spent with you has been precious.
+
+And you know what? You're so sweet that I don’t even know how to express it properly –
+You're like gold – pure, rare, and valuable.
+
+And yeah... every time we’ve had silly little fights, I realized just one thing –
+I can’t even stay without talking to you for a single day.
+
+We're so funny together, right? Always laughing, always messing around...
+But no matter what – I love you, my jaan.
+
+Once again... a very very happy birthday to you, Tanude! 🎂
+And here’s a little birthday tune for you:
+
+🎶 Baar baar din ye aaye,
+Baar baar dil ye gaaye...
+Tu jiye hazaron saal,
+Ye meri hai aarzoo...
+Happy Birthday to You! 🎉`;
+
+  let i = 0;
+  function typeWriter() {
+    if (i < text.length) {
+      document.getElementById("typewriter").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, 35);
+    }
+  }
+
+  function revealMessage() {
+    document.getElementById("secretMessage").style.display = "block";
+  }
+
+  window.onload = typeWriter;
+</script>
+
+</body>
+</html>
